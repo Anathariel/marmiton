@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-18T08:33:36.434Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="GC9y80d0ezLIgWINcd_Q" version="21.1.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-18T08:36:44.892Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="-wRP6IZQ3MO3y7_9nmEt" version="21.1.8" type="github">
   <diagram name="Page-1" id="7Jga0d-szdHKj6bJcx9B">
     <mxGraphModel dx="1434" dy="756" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1000" math="0" shadow="0">
       <root>
@@ -109,7 +109,7 @@
         <mxCell id="FPBq3adGTzS3eKzxV1aU-32" value="&lt;h2&gt;&lt;font style=&quot;font-size: 20px;&quot; face=&quot;Garamond&quot;&gt;Recipe&lt;/font&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="360" y="520" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="FPBq3adGTzS3eKzxV1aU-33" value="&lt;pre style=&quot;font-size: 16px; line-height: 170%;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;id (int)&lt;br&gt;FK id_user (int)&lt;br&gt;name (varchar 150)&lt;br&gt;img (varchar150)&lt;br&gt;created_at (date)&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;spacingLeft=10;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="FPBq3adGTzS3eKzxV1aU-33" value="&lt;pre style=&quot;font-size: 16px; line-height: 170%;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;id (int)&lt;br&gt;&lt;b&gt;FK &lt;/b&gt;id_user (int)&lt;br&gt;name (varchar 150)&lt;br&gt;img (varchar150)&lt;br&gt;created_at (date)&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;spacingLeft=10;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="360" y="560" width="160" height="180" as="geometry" />
         </mxCell>
         <mxCell id="FPBq3adGTzS3eKzxV1aU-34" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.006;exitY=0.335;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.004;entryY=0.188;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="FPBq3adGTzS3eKzxV1aU-33" target="FPBq3adGTzS3eKzxV1aU-31" edge="1">
@@ -125,13 +125,13 @@
         <mxCell id="FPBq3adGTzS3eKzxV1aU-35" value="&lt;h2&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;Recipe_Ingredient&lt;/font&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="680" y="520" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="FPBq3adGTzS3eKzxV1aU-36" value="&lt;pre style=&quot;font-size: 16px; line-height: 150%;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;FK id_recipe (int)&lt;br&gt;FK id_ingredient (int)&lt;br&gt;Quantity (int)&lt;br&gt;Unit (varchar 15)&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;" parent="1" vertex="1">
+        <mxCell id="FPBq3adGTzS3eKzxV1aU-36" value="&lt;pre style=&quot;font-size: 16px; line-height: 150%;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;&lt;b&gt;FK &lt;/b&gt;id_recipe (int)&lt;br&gt;&lt;b&gt;FK &lt;/b&gt;id_ingredient (int)&lt;br&gt;Quantity (int)&lt;br&gt;Unit (varchar 15)&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="680" y="560" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="FPBq3adGTzS3eKzxV1aU-37" value="&lt;h2&gt;&lt;font face=&quot;Times New Roman&quot;&gt;Recipe_category&lt;/font&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="680" y="720" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="FPBq3adGTzS3eKzxV1aU-38" value="&lt;pre style=&quot;font-size: 16px; line-height: 150%;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;FK id_recipe (int)&lt;br&gt;FK id_category (int)&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;spacingLeft=10;align=left;" parent="1" vertex="1">
+        <mxCell id="FPBq3adGTzS3eKzxV1aU-38" value="&lt;pre style=&quot;font-size: 16px; line-height: 150%;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot; face=&quot;Garamond&quot;&gt;&lt;b&gt;FK &lt;/b&gt;id_recipe (int)&lt;br&gt;&lt;b&gt;FK &lt;/b&gt;id_category (int)&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;spacingLeft=10;align=left;" parent="1" vertex="1">
           <mxGeometry x="680" y="760" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="FPBq3adGTzS3eKzxV1aU-39" value="&lt;h2&gt;&lt;font face=&quot;Garamond&quot;&gt;Ingredient&lt;/font&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
