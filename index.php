@@ -3,14 +3,17 @@ require_once './vendor/altorouter/altorouter/AltoRouter.php';
 require_once './vendor/autoload.php';
 
 $router = new AltoRouter();
-$router->setBasePath('/php/router');
+$router->setBasePath('/projets/marmiton');
 
 
 // map users details page using controller#action string
 // EXEMPLE :
-$router->map( 'GET', '/', 'PostController#homePage', 'home' );
+$router->map( 'GET', '/', 'RecipeController#homePage', 'home' );
+$router->map('GET', '/recipes', 'RecipeController#index', 'baseRecipe');
+
 
 $match = $router->match();
+var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
