@@ -1,32 +1,14 @@
 <?php
-class RecipeController {
-
-    private static function getTwig(){
-        static $twig = null;
-        if($twig === null){
-            $loader = new \Twig\Loader\FilesystemLoader('./view');
-            $twig = new \Twig\Environment($loader, ['cache' => false,]);
-        }
-        return $twig;
-    }
-
-    public function homePage(){
-        global $router;
+class RecipeController extends Controller{
+    public function homepage(){
         $model = new RecipeModel();
         $datas = $model->getLastTenRecipes();
-
-        $twig = self::getTwig();
-
-    $link = $router->generate('baseRecipe');
-    echo $twig->render('homepage.html.twig',['recipes'=> $datas, 'link' => $link]);
+        echo self::getTwig()->render('homepage.html.twig',['recipes' => $datas]);
     }
-
+    
     public function getOne($id){
         $model = new RecipeModel();
-        $recipe = $model->getOneRecipe($id);
-    
-        $twig = self::getTwig();
-    
-        echo $twig->render('recipe.html.twig',['recipe'=> $recipe]);
-    }    
+        $datas = $model->getOneRecipe($id);
+        echo self::getTwig()->render('recipe.html.twig',['recipe'=> $datas]);
+    } 
 }
