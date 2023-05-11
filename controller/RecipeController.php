@@ -1,5 +1,5 @@
 <?php
-class RecipeController extends Controller{
+class RecipeController extends Controller {
     public function homepage(){
         $model = new RecipeModel();
         $datas = $model->getLastTenRecipes();
@@ -10,5 +10,5 @@ class RecipeController extends Controller{
         $model = new RecipeModel();
         $datas = $model->getOneRecipe($id);
         echo self::getTwig()->render('recipe.html.twig',['recipe'=> $datas]);
-    } 
+    }
 }

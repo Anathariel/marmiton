@@ -1,0 +1,49 @@
+//& -------------------- SCSS VARIABLES -------------------- //
+
+//^ --------- COLORS --------- //
+$maincolor : #2D92A8;
+$maindark: #1E6473;
+
+$white : #E5E5E5;
+$whiter : #ffffff;
+
+$gray : #4E4646;
+$darkgray: #555555;
+
+$accent: #43121D;
+
+//* --------- FONT --------- //
+
+$mainfont: 'Roboto';
+$titlefont: 'Quicksand';
+
+//? -------------------- RESETS -------------------- //
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+p,a {
+    color: $gray;
+    font-family: 'Roboto';
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: $maindark;
+    font-family: 'Quicksand';
+}
+
+//? -------------------- STYLING -------------------- //
+
+footer {
+    background-color: $maincolor;
+}
+
+.accent {
+    color: $accent;
+}

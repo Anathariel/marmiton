@@ -8,12 +8,10 @@ $router->setBasePath('/projets/marmiton');
 
 // map users details page using controller#action string
 // EXEMPLE :
-$router->map( 'GET', '/', 'RecipeController#homePage', 'home' );
-$router->map('GET', '/recipes', 'RecipeController#index', 'baseRecipe');
-
+$router->map( 'GET', '/', 'RecipeController#homepage', 'home' );
+$router->map('GET', '/[i:id]', 'RecipeController#getOne', 'recipe');
 
 $match = $router->match();
-var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);

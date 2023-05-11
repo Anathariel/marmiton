@@ -1,0 +1,26 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+p, a {
+  color: #4E4646;
+  font-family: "Roboto";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1E6473;
+  font-family: "Quicksand";
+}
+
+footer {
+  background-color: #2D92A8;
+}
+
+.accent {
+  color: #43121D;
+}/*# sourceMappingURL=style.css.map */

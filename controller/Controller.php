@@ -11,19 +11,13 @@ abstract class Controller
 
     private static function setTwig()
     {
-        self::$twig = new \Twig\Environment(self::$loader, ['cache' => false,]);
-    }
-
-    private static function initialize()
-    {
-        self::setLoader();
-        self::setTwig();
+        self::$twig = new \Twig\Environment(self::getLoader(), ['cache' => false,]);
     }
 
     protected static function getLoader()
     {
         if (self::$loader === null) {
-            self::initialize();
+            self::setLoader();
         }
         return self::$loader;
     }
@@ -31,7 +25,7 @@ abstract class Controller
     protected static function getTwig()
     {
         if (self::$twig === null) {
-            self::initialize();
+            self::setTwig();
         }
         return self::$twig;
     }
