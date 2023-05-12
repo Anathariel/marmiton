@@ -20,6 +20,7 @@ class ComposerStaticInit0f420bc9878dec335a8525c589e53bd2
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Asset\\' => 24,
         ),
     );
 
@@ -35,6 +36,10 @@ class ComposerStaticInit0f420bc9878dec335a8525c589e53bd2
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
         ),
     );
 
