@@ -5,16 +5,18 @@ require_once './vendor/autoload.php';
 $router = new AltoRouter();
 $router->setBasePath('/projets/marmiton');
 
-// Sign-up/register form route
-$router->map('GET|POST', '/signup', 'UserController#register','register');
+
 
 // CONTROLLER#ACTION , string
-$router->map('GET', '/', 'HomeController#home', '');
+$router->map('GET', '/', 'HomeController#home', 'home');
 
 // Rewrite URLs
 $router->map('GET', '/recipe/', '', 'baseRecipe');
 $router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
 $router->map('GET','/category/','','baseCats');
+
+// Sign-up/register form route
+$router->map('GET|POST', '/login', 'UserController#register','baseLog');
 
 $match = $router->match();
 var_dump($match);

@@ -27,7 +27,7 @@ abstract class Controller
         //LINKS
         $link = $router->generate('baseRecipe');
         $link2 = $router->generate('baseCats');
-        $link3 = $router->generate('register');
+        $link3 = $router->generate('baseLog');
         // CATEGORIES
         $categories  = new CategoryModel();
         $cats  = $categories->getAllCategory();

@@ -3,18 +3,30 @@ class UserController extends Controller
 {
     public function register()
     {
+        $model = new UserModel();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'];
-            $password = $_POST['password'];
-            $email = $_POST['email'];
+            $rawPass = $_POST['password'];
+            $password = password_hash($rawPass, PASSWORD_DEFAULT);
+            $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
 
-            $userController = new UserController();
-            $userController->register($username, $password, $email);
+            $userData = new User([
+                'username' => $username,
+                'password' => $password,
+                'email' => $email
+            ]);
 
-            $userModel = new UserModel();
-            $userModel->createUser($username, $email, $password);
+            $user = ($userData);
+            $result = $model->createUser($user);
+
+            global $router;
+            header('Location:' . $router->generate('home'));
+            exit();
         } else {
-            echo self::getRender('registration.html.twig',[]);
+            global $router;
+            $link = $router->generate('baseLog');
+            echo self::getRender('registration.html.twig',['link' => $link]);
         }
     }
 }
