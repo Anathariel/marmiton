@@ -1,11 +1,12 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
 .limit-size {
   max-width: 1900px;
   width: 100%;
+  margin: 0 auto;
 }
 
 body {
@@ -13,12 +14,23 @@ body {
   scroll-behavior: smooth;
 }
 
-p, a {
+p,
+a {
   color: #4E4646;
   font-family: "Roboto";
+  text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #1E6473;
   font-family: "Quicksand";
 }
@@ -29,4 +41,33 @@ footer {
 
 .accent {
   color: #43121D;
+}
+
+header #nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+header nav li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  color: #2D92A8;
+  font-size: 1rem;
+  font-family: "Roboto";
+  padding: 0 10px;
+  text-transform: uppercase;
+  transition: all 0.8s ease;
+  font-weight: 600;
+}
+header nav li:hover a {
+  color: #E5E5E5;
+  background-color: #2D92A8;
+}
+
+section {
+  padding-bottom: 5rem;
 }/*# sourceMappingURL=style.css.map */

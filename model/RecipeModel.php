@@ -9,7 +9,6 @@ class RecipeModel extends Model {
             $recipes[] = new Recipe($recipe);
         }
 
-        $req->closeCursor();
         return $recipes;
     }
 
@@ -20,8 +19,7 @@ class RecipeModel extends Model {
         $req->execute();
 
         $recipe = new Recipe($req->fetch(PDO::FETCH_ASSOC));
-        
-        $req->closeCursor();
+
         return $recipe;
     }
 }

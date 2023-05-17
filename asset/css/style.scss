@@ -20,13 +20,14 @@ $titlefont: 'Quicksand';
 //? -------------------- RESETS -------------------- //
 
 * {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
 .limit-size {
     max-width: 1900px;
     width: 100%;
+    margin: 0 auto;
 }
 
 body {
@@ -34,12 +35,23 @@ body {
     scroll-behavior: smooth;
 }
 
-p,a {
+p,
+a {
     color: $gray;
     font-family: 'Roboto';
+    text-decoration: none;
 }
 
-h1,h2,h3,h4,h5,h6 {
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: $maindark;
     font-family: 'Quicksand';
 }
@@ -52,4 +64,42 @@ footer {
 
 .accent {
     color: $accent;
+}
+
+header {
+    #nav-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            a {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+                color: $maincolor;
+                font-size: 1rem;
+                font-family: $mainfont;
+                padding: 0 10px;
+                text-transform: uppercase;
+                transition: all .8s ease;
+                font-weight: 600;
+            }
+
+            &:hover a {
+                color: $white;
+                background-color: $maincolor;
+            }
+        }
+    }
+}
+
+section {
+    padding-bottom: 5rem;
 }

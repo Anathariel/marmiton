@@ -45,12 +45,19 @@ class ComposerStaticInit0f420bc9878dec335a8525c589e53bd2
 
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
+        'Category' => __DIR__ . '/../..' . '/class/Category.php',
+        'CategoryController' => __DIR__ . '/../..' . '/controller/CategoryController.php',
+        'CategoryModel' => __DIR__ . '/../..' . '/model/CategoryModel.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Controller' => __DIR__ . '/../..' . '/controller/Controller.php',
+        'HomeController' => __DIR__ . '/../..' . '/controller/HomeController.php',
         'Model' => __DIR__ . '/../..' . '/model/Model.php',
         'Recipe' => __DIR__ . '/../..' . '/class/Recipe.php',
         'RecipeController' => __DIR__ . '/../..' . '/controller/RecipeController.php',
         'RecipeModel' => __DIR__ . '/../..' . '/model/RecipeModel.php',
+        'User' => __DIR__ . '/../..' . '/class/User.php',
+        'UserController' => __DIR__ . '/../..' . '/controller/UserController.php',
+        'UserModel' => __DIR__ . '/../..' . '/model/UserModel.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
