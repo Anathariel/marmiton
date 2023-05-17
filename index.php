@@ -13,7 +13,8 @@ $router->map('GET', '/', 'HomeController#home', '');
 
 // Rewrite URLs
 $router->map('GET', '/recipe/', '', 'baseRecipe');
-$router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');$router->map('GET','/category/','','baseCats');
+$router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
+$router->map('GET','/category/','','baseCats');
 
 $match = $router->match();
 var_dump($match);
