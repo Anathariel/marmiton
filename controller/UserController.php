@@ -14,14 +14,7 @@ class UserController extends Controller
             $userModel = new UserModel();
             $userModel->createUser($username, $email, $password);
         } else {
-            global $router;
-
-            $categories  = new CategoryModel();
-            $cats  = $categories->getAllCategory();
-            
-            $link3  = $router->generate('register');
-
-        echo self::getTwig()->render('registration.html.twig',['cats' => $cats,'link' => $link3]);
+            echo self::getRender('registration.html.twig',[]);
         }
     }
 }

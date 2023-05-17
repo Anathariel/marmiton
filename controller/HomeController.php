@@ -4,7 +4,6 @@ class HomeController extends Controller
 {
     public function home()
     {
-        global $router;
         // RECIPES
         $recipeModel = new RecipeModel();
         $recipes = $recipeModel->getLastTenRecipes();
