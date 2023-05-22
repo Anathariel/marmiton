@@ -10,8 +10,18 @@
 
 
 {% block content %}
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 	<div id="register">
+	<fieldset>
+	<legend>Sign Up</legend>
+	<br>
+<br>
+<br>
 		<form method="POST">
 
 			<label for="username"></label>
@@ -25,10 +35,24 @@
 
 
 			<input type="submit" value="Sign Up">
+			<br>
+<br>
+<br>
+			</fieldset>
 		</div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 		<div id="connect">
-			<form method="POST">
+		<fieldset>
+	<legend>Sign In</legend>
+	<br>
+<br>
+<br>
+			<form action="{{ connectionPage }}" method="POST">
 
 				<label for="username"></label>
 				<input type="text" id="username" name="username" placeholder="Your username here">
@@ -37,5 +61,15 @@
 				<input type="password" id="password" name="password" placeholder="password">
 
 				<input type="submit" value="Sign In">
+				<br>
+<br>
+<br>
+				</fieldset>
 			</div>
+			<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 		{% endblock %}

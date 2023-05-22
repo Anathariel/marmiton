@@ -15,11 +15,14 @@ $router->map('GET', '/recipe/', '', 'baseRecipe');
 $router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
 $router->map('GET','/category/','','baseCats');
 
-// Sign-up/register form route
+// Sign-in/register form route
 $router->map('GET|POST', '/login', 'UserController#register','baseLog');
+$router->map('POST', '/login', 'UserController#connection', 'connection');
+
+
 
 $match = $router->match();
-var_dump($match);
+// var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
