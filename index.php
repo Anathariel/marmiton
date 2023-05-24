@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once './vendor/altorouter/altorouter/AltoRouter.php';
 require_once './vendor/autoload.php';
 
@@ -15,9 +16,16 @@ $router->map('GET', '/recipe/', '', 'baseRecipe');
 $router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
 $router->map('GET','/category/','','baseCats');
 
-// Sign-in/register form route
-$router->map('GET|POST', '/login', 'UserController#register','baseLog');
-$router->map('POST', '/login', 'UserController#connection', 'connection');
+// Log-in/out form route
+$router->map('GET|POST','/login', 'UserController#login', 'login');
+$router->map('GET','/logout', 'UserController#logout', 'logout');
+// Register
+$router->map('GET|POST','/registration', 'UserController#register', 'register');
+
+
+
+// User Account
+// $router->map('GET','/account', 'UserController#login', 'account');
 
 
 

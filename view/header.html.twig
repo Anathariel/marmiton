@@ -3,11 +3,8 @@
 	<div id="nav-menu">
 		<nav>
 			<ul>
-				<a href="#"><img src="{{ style }}/media/icons/logo.svg"></a>
+				<a href="{{ home }}"><img src="{{ style }}/media/icons/logo.svg"></a>
 
-				<li>
-					<a href="#">Home</a>
-				</li>
 				<li>
 					<a href="#">About Us</a>
 				</li>
@@ -21,7 +18,14 @@
 					<a href="#">Subscribe</a>
 				</li>
 				<li>
-					<a href="{{ link3 }}">Sign In</a>
+					<a href="{{ linkregister }}">Register</a>
+				</li>
+				<li>
+					{% if session.connect %}
+						<a href="{{ link5 }}">Log Out</a>
+					{% else %}
+						<a href="{{ link3 }}">Log In</a>
+					{% endif %}
 				</li>
 			</ul>
 		</nav>

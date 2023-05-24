@@ -18,31 +18,24 @@ class UserModel extends Model
         $username = $user->getUsername();
         $password = $user->getPassword();
         $email = $user->getEmail();
+
+
+        $req = $this->getDb()->prepare("INSERT INTO `user` (`password`, `username`, `email`) VALUES (:password, :username, :email)");
+        $req->bindParam(":password", $password, PDO::PARAM_STR);
+        $req->bindParam(":username", $username, PDO::PARAM_STR);
+        $req->bindParam(":email", $email, PDO::PARAM_STR);
         
-        // Prepare the SQL query
-        $query = $this->getDb()->prepare('INSERT INTO `user`(`username`, `password`, `email`) VALUES (:username, :password, :email)');
+        $req->execute();
 
-        // Bind the values to the parameters
-        $query->bindValue(':username', $username, PDO::PARAM_STR);
-        $query->bindValue(':password', $password, PDO::PARAM_STR);
-        $query->bindValue(':email', $email, PDO::PARAM_STR);
-
-        // Execute the query
-        $query->execute();
+        $req->closeCursor();
     }
 
-    public function checklogin(){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+    public function getUserByEmail(string $email){
 
-        $query = $this->getDb()->prepare('SELECT `uid`, `username`, `password`, `email`, `favoris`, `joined_date` FROM `user` WHERE `username` = :username AND `password` = :password');
+        $req = $this->getDb()->prepare("SELECT `uid`, `username`, `password`, `email`, `favoris`, `joined_date` FROM `user` WHERE `email` = :email");
+        $req->bindParam(":email", $email, PDO::PARAM_STR);
+        $req->execute();
 
-        $query->bindValue(':username', $username, PDO::PARAM_STR);
-        $query->bindValue(':password', $password, PDO::PARAM_STR);
-        $query->execute();
-
-        $user = $query->fetch(PDO::FETCH_OBJ);
-
-        return $user;
+        return $req->rowCount() === 1 ? new User($req->fetch(PDO::FETCH_ASSOC)) : false;
     }
 }
