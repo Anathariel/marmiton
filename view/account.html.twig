@@ -1,9 +1,13 @@
 {% extends "template.html.twig" %}
 
-{% block headerblock %}{% include 'header.html.twig' with {'categories' : cats } %}{% endblock %}
+{% block headerblock %}{% include 'header.html.twig' with {'categories': cats } %}{% endblock %}
 
-{% block title %}Mon compte{% endblock %}
+{% block title %}{{ session.username }}'s Account{% endblock %}
 
 {% block content %}
-Bienvenue {{ session.username }}
+
+    Bienvenue {{ session.username }}
+
+    <a href="{{ path('recipeAdd') }}">Add a recipe</a>
+
 {% endblock %}

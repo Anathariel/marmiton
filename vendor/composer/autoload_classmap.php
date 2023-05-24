@@ -13,6 +13,7 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Controller' => $baseDir . '/controller/Controller.php',
     'HomeController' => $baseDir . '/controller/HomeController.php',
+    'Ingredient' => $baseDir . '/class/Ingredient.php',
     'Model' => $baseDir . '/model/Model.php',
     'Recipe' => $baseDir . '/class/Recipe.php',
     'RecipeController' => $baseDir . '/controller/RecipeController.php',

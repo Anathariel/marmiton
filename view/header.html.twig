@@ -3,28 +3,28 @@
 	<div id="nav-menu">
 		<nav>
 			<ul>
-				<a href="{{ home }}"><img src="{{ style }}/media/icons/logo.svg"></a>
+				<a href="{{ path('home') }}"><img src="{{ style }}/media/icons/logo.svg"></a>
 
 				<li>
 					<a href="#">About Us</a>
 				</li>
 				<li>
-					<a href="#">Blog</a>
-				</li>
-				<li>
-					<a href="#">Reviews</a>
-				</li>
-				<li>
-					<a href="#">Subscribe</a>
-				</li>
-				<li>
-					<a href="{{ register }}">Register</a>
-				</li>
-				<li>
 					{% if session.connect %}
-						<a href="{{ logout }}">Log Out</a>
+						<a href="{{ path('account') }}">My account</a>
+						
+						<li>
+							<a href="{{ path('recipeAdd') }}">Add a Recipe</a>
+						</li>
+						<li>
+							<a href="{{ path('logout') }}">Log Out</a>
+						</li>
+						
+
 					{% else %}
-						<a href="{{ login }}">Log In</a>
+						<a href="{{ path('register') }}">Register</a>
+						<li>
+							<a href="{{ path('login') }}">Log In</a>
+						</li>
 					{% endif %}
 				</li>
 			</ul>

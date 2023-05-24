@@ -61,4 +61,15 @@ class UserController extends Controller
         header('Location: ' . $router->generate('home'));
         exit();
     }
+
+    public function account(){
+        if ($_SESSION['connect']) {
+            echo self::getRender('account.html.twig', []);
+        } else {
+            // Redirect to login page if not logged in
+            global $router;
+            header('Location: ' . $router->generate('login'));
+            exit();
+        }
+    }
 }

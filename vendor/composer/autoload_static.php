@@ -51,6 +51,7 @@ class ComposerStaticInit0f420bc9878dec335a8525c589e53bd2
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Controller' => __DIR__ . '/../..' . '/controller/Controller.php',
         'HomeController' => __DIR__ . '/../..' . '/controller/HomeController.php',
+        'Ingredient' => __DIR__ . '/../..' . '/class/Ingredient.php',
         'Model' => __DIR__ . '/../..' . '/model/Model.php',
         'Recipe' => __DIR__ . '/../..' . '/class/Recipe.php',
         'RecipeController' => __DIR__ . '/../..' . '/controller/RecipeController.php',

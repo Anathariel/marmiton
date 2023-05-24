@@ -10,41 +10,43 @@ abstract class Controller{
         }
         return self::$loader;
     }
-   
+
     protected static function getTwig(){
         if (self::$twig === null) {
-            self::$twig = new \Twig\Environment(self::getLoader());
+            $loader = self::getLoader();
+            self::$twig = new \Twig\Environment($loader);
             self::$twig->addGlobal('session', $_SESSION);
             self::$twig->addGlobal('get', $_GET);
 
+            // Add the path function to Twig environment
+            self::$twig->addFunction(new \Twig\TwigFunction('path', function ($routeName) {
+                global $router;
+                return $router->generate($routeName);
+            }));
         }
         return self::$twig;
     }
 
+
     protected static function setRender(string $template, $datas){
+
         global $router;
 
         //LINKS
         $oneRecipe = $router->generate('baseRecipe');
         $categorieslink = $router->generate('baseCats');
-        $login = $router->generate('login');
-        $register = $router->generate('register');
-        $logout = $router->generate('logout');
-        $home = $router->generate('home');
 
         // CATEGORIES
         $categories  = new CategoryModel();
         $cats  = $categories->getAllCategory();
 
+        // LINKS TABLE + NEW ONES
         $new = [
-            'home' => $home,
             'cats' => $cats,
             'oneRecipe' => $oneRecipe,
             'categorieslink' => $categorieslink,
-            'login' => $login,
-            'register' => $register,
-            'logout' => $logout
         ] + $datas;
+        
         echo self::getTwig()->render($template, $new);
     }
 

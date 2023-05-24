@@ -6,35 +6,30 @@ class Category
     private $cname;
     private $cslug;
 
-    public function __construct(array $post)
-    {
+    public function __construct(array $post){
         $this->hydrate($post);
     }
 
-    private function hydrate(array $post)
-    {
-        foreach ($post as $key => $value) {
+    private function hydrate(array $post){
+        foreach ($post as $key => $value){
             $method = 'set' . ucfirst($key);
 
-            if (method_exists($this, $method)) {
+            if (method_exists($this, $method)){
                 $this->$method($value);
             }
         }
     }
 
     //GETTERS
-    public function getCid()
-    {
+    public function getCid(){
         return $this->cid;
     }
 
-    public function getCname()
-    {
+    public function getCname(){
         return $this->cname;
     }
 
-    public function getCslug()
-    {
+    public function getCslug(){
         return $this->cslug;
     }
 
