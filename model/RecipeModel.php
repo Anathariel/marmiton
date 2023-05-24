@@ -13,6 +13,18 @@ class RecipeModel extends Model {
         return $recipes;
     }
 
+    public function getAllRecipes(){
+        $recipes = [];
+
+        $req = $this->getDb()->query('SELECT `id`, `author`, `title`, `duration`, `thumbnail`, `content`, `created_at` FROM `recipe` ORDER BY `id` DESC');
+
+        while($recipe = $req->fetch(PDO::FETCH_ASSOC)){
+            $recipes[] = new Recipe($recipe);
+        }
+
+        return $recipes;
+    }
+
     public function getOneRecipe(int $id){
 
         $req = $this->getDb()->prepare('SELECT `id`, `author`, `title`, `duration`, `thumbnail`, `content`, `created_at` FROM `recipe` WHERE `id`= :id');

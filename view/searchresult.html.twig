@@ -1,0 +1,26 @@
+{% extends "template.html.twig" %}
+
+{% block title %}Your Search Results
+{% endblock %}
+
+{% block headerblock %}{% include 'header.html.twig' with {'categories' : cats } %}{% endblock %}
+
+
+{% block content %}
+<h2>Search Results</h2>
+
+    {% if results is not empty %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    <h3>{{ result.title }}</h3>
+                    <p>{{ result.content }}</p>
+                    <p>Author: {{ result.author }}</p>
+                    <p>Created at: {{ result.created_at|date("d-m-Y") }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock %}

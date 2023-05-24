@@ -7,14 +7,16 @@
 
 
 {% block content %}
+
 	<section id="homepage" class="limit-size">
 
 		<h1 class="accent">Lorem ipsum dolor sit amet.</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio finibus bibendum amet leo.
 		</p>
-
-		<!-- SEARCH BAR IF I HAD ONE -->
-
+	<form action="{{ path('search') }}" method="GET">
+		<input type="search" name="search" placeholder="Search Recipes . . .">
+		<input type="submit" name="submit" value="Search">
+	</form>
 	</section>
 
 	<section id="reassurance" class="limit-size">
@@ -98,4 +100,5 @@
 		<input type="email">
 		<button>Subscribe</button>
 	</section>
+
 {% endblock %}

@@ -18,6 +18,8 @@ return array(
     'Recipe' => $baseDir . '/class/Recipe.php',
     'RecipeController' => $baseDir . '/controller/RecipeController.php',
     'RecipeModel' => $baseDir . '/model/RecipeModel.php',
+    'SearchController' => $baseDir . '/controller/SearchController.php',
+    'SearchModel' => $baseDir . '/model/SearchModel.php',
     'User' => $baseDir . '/class/User.php',
     'UserController' => $baseDir . '/controller/UserController.php',
     'UserModel' => $baseDir . '/model/UserModel.php',

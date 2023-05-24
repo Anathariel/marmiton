@@ -1,9 +1,7 @@
 <?php
-class RecipeController extends Controller
-{
+class RecipeController extends Controller{
 
-    public function getOne($id)
-    {
+    public function getOne($id){
 
         $model = new RecipeModel();
         $recipe = $model->getOneRecipe($id);
@@ -11,8 +9,17 @@ class RecipeController extends Controller
         echo self::getRender('recipe.html.twig', ['recipe' => $recipe]);
     }
 
-    public function createRecipe()
-    {
+    public function getAll(){
+        global $router;
+        $model = new RecipeModel();
+        $recipes = $model->getAllRecipes();
+
+        $recipeindex = $router->generate('recipeindex');
+        echo self::getRender('recipeindex.html.twig', ['recipes' => $recipes, 'recipeindex' => $recipeindex]);
+    }
+
+    // C R U D
+    public function createRecipe(){
         global $router;
         if (!$_POST) {
             echo self::getRender('addrecipe.html.twig', []);
