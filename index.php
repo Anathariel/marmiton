@@ -7,10 +7,9 @@ $router = new AltoRouter();
 $router->setBasePath('/projets/marmiton');
 
 
-// CONTROLLER#ACTION , string
+// HOMEPAGE
 $router->map('GET', '/', 'HomeController#home', 'home');
-
-// Rewrite URLs
+// CONTROLLER#ACTION , string
 $router->map('GET', '/recipe/', '', 'baseRecipe');
 $router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
 $router->map('GET','/category/','','baseCats');
@@ -21,13 +20,11 @@ $router->map('GET','/logout', 'UserController#logout', 'logout');
 // Register
 $router->map('GET|POST','/registration', 'UserController#register', 'register');
 
-
 // USER
 $router->map('GET', '/account', 'UserController#account', 'account');
 
 // CRUD
 $router->map('GET|POST', '/addrecipe', 'RecipeController#createRecipe', 'recipeAdd');
-
 
 
 $match = $router->match();

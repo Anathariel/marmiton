@@ -27,7 +27,6 @@ abstract class Controller{
         return self::$twig;
     }
 
-
     protected static function setRender(string $template, $datas){
 
         global $router;

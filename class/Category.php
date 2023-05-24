@@ -1,7 +1,6 @@
 <?php
 
-class Category
-{
+class Category{
     private $cid;
     private $cname;
     private $cslug;

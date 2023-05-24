@@ -1,7 +1,6 @@
 <?php
 
 class Ingredient {
-
     private $id;
     private $name;
     private $slug;
