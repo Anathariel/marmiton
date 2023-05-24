@@ -18,13 +18,13 @@
 					<a href="#">Subscribe</a>
 				</li>
 				<li>
-					<a href="{{ linkregister }}">Register</a>
+					<a href="{{ register }}">Register</a>
 				</li>
 				<li>
 					{% if session.connect %}
-						<a href="{{ link5 }}">Log Out</a>
+						<a href="{{ logout }}">Log Out</a>
 					{% else %}
-						<a href="{{ link3 }}">Log In</a>
+						<a href="{{ login }}">Log In</a>
 					{% endif %}
 				</li>
 			</ul>
@@ -40,7 +40,7 @@
 				<!-- START LOOP HERE -->
 				{% for category in categories %}
 					<li>
-						<a href="{{link2}}{{ category.cid }}">
+						<a href="{{ categorieslink }}{{ category.cid }}">
 							{{ category.cname }}
 						</a>
 					</li>

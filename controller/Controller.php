@@ -25,23 +25,25 @@ abstract class Controller{
         global $router;
 
         //LINKS
-        $link = $router->generate('baseRecipe');
-        $link2 = $router->generate('baseCats');
-        $link3 = $router->generate('login');
-        $linkregister = $router->generate('register');
-        $link5 = $router->generate('logout');
+        $oneRecipe = $router->generate('baseRecipe');
+        $categorieslink = $router->generate('baseCats');
+        $login = $router->generate('login');
+        $register = $router->generate('register');
+        $logout = $router->generate('logout');
+        $home = $router->generate('home');
 
         // CATEGORIES
         $categories  = new CategoryModel();
         $cats  = $categories->getAllCategory();
 
         $new = [
+            'home' => $home,
             'cats' => $cats,
-            'link' => $link,
-            'link2' => $link2,
-            'link3' => $link3,
-            'linkregister' => $linkregister,
-            'link5' => $link5
+            'oneRecipe' => $oneRecipe,
+            'categorieslink' => $categorieslink,
+            'login' => $login,
+            'register' => $register,
+            'logout' => $logout
         ] + $datas;
         echo self::getTwig()->render($template, $new);
     }
