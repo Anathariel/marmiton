@@ -12,6 +12,7 @@ $router->map('GET', '/', 'HomeController#home', 'home');
 // CONTROLLER#ACTION , string
 $router->map('GET', '/recipe/', '', 'baseRecipe');
 $router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
+
 $router->map('GET','/category/','','baseCats');
 $router->map('GET', '/category/[i:id]', 'CategoryController#getOne', '');
 

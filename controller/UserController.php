@@ -1,11 +1,10 @@
 <?php
-class UserController extends Controller
-{
+class UserController extends Controller {
     public function register(){
         global $router;
         $model = new UserModel();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'];
             $rawPass = $_POST['password'];
             $password = password_hash($rawPass, PASSWORD_DEFAULT);
@@ -19,8 +18,7 @@ class UserController extends Controller
 
             $model->createUser($user);
             header('Location: ' . $router->generate('login'));
-        }
-        else {
+        } else {
             echo self::getRender('registration.html.twig', []);
         }
     }
@@ -40,7 +38,6 @@ class UserController extends Controller
                     $_SESSION['uid'] = $user->getUid();
                     $_SESSION['username'] = $user->getUsername();
                     $_SESSION['connect'] = true;
-                    
 
                     echo self::getRender('account.html.twig', []);
                 } else {
@@ -64,7 +61,12 @@ class UserController extends Controller
 
     public function account(){
         if ($_SESSION['connect']) {
-            echo self::getRender('account.html.twig', []);
+            $userId = $_SESSION['uid'];
+
+            $model = new UserModel();
+            $userRecipes = $model->getUserRecipes($userId);
+
+            echo self::getRender('account.html.twig', ['userRecipes' => $userRecipes]);
         } else {
             // Redirect to login page if not logged in
             global $router;

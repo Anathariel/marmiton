@@ -2,11 +2,11 @@
 class RecipeController extends Controller{
 
     public function getOne($id){
-
+        global $router;
         $model = new RecipeModel();
         $recipe = $model->getOneRecipe($id);
-
-        echo self::getRender('recipe.html.twig', ['recipe' => $recipe]);
+        $oneRecipe = $router->generate('baseRecipe');
+        echo self::getRender('recipe.html.twig', ['recipe' => $recipe,'oneRecipe' => $oneRecipe]);
     }
 
     public function getAll(){

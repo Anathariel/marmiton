@@ -20,7 +20,7 @@
             {% for recipe in recipes %}
 					<div id="recipe-card">
 						<li>
-							<a href="{{ oneRecipe }}{{ recipe.id }}">{{ recipe.title }}</a>
+							<a href="{{ path('baseRecipe') }}{{ recipe.id }}">{{ recipe.title }}</a>
 						</li>
 						<li>
 							<p>{{ recipe.duration }}</p>

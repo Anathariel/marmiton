@@ -1,5 +1,3 @@
-{% set style = '/projets/marmiton/asset' %}
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{% block stylesheet %}{% endblock %}
-		<link rel="stylesheet" href="{{ style }}/css/font.css">
-		<link rel="stylesheet" href="{{ style }}/css/style.css">
+		<link rel="stylesheet" href="{{ asset('/css/font.css') }}">
+		<link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 
 		<title>
 			{% block title %}{% endblock %}
@@ -23,7 +21,7 @@
 		</main>
 
 		{% block javascript %}{% endblock %}
-		<script src="{{ style }}/js/main.js"></script>
+		<script src="{{ asset('/js/main.js') }}"></script>
 
 		{% include 'footer.html.twig' %}
 	</body>
