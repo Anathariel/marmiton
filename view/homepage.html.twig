@@ -3,7 +3,9 @@
 {% block title %}Bienvenue sur la page d'accueil
 {% endblock %}
 
-{% block headerblock %}{% include 'header.html.twig' with {'categories' : cats } %}{% endblock %}
+{% block headerblock %}
+	{% include 'header.html.twig' with {'categories' : cats } %}
+{% endblock %}
 
 
 {% block content %}
@@ -13,10 +15,11 @@
 		<h1 class="accent">Lorem ipsum dolor sit amet.</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio finibus bibendum amet leo.
 		</p>
-	<form action="{{ path('search') }}" method="GET">
-		<input type="search" name="search" placeholder="Search Recipes . . .">
-		<input type="submit" name="submit" value="Search">
-	</form>
+
+		<form action="{{ path('search') }}" method="GET">
+			<input type="search" name="search" placeholder="Search Recipes . . .">
+			<button type="submit">X</button>
+		</form>
 	</section>
 
 	<section id="reassurance" class="limit-size">
@@ -63,7 +66,7 @@
 	<section id="aboutus" class="limit-size">
 		<h2>When a man's stomach is full it makes no difference whether he is rich or poor.</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio
-									finibus bibendum in sit amet leo. Mauris feugiat erat tellus.</p>
+												finibus bibendum in sit amet leo. Mauris feugiat erat tellus.</p>
 
 		<div>
 			<a href="#">

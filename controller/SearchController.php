@@ -1,21 +1,28 @@
 <?php
 
-class SearchController extends Controller {
-    public function searchrecipe() {
-        global $router;
+class SearchController extends Controller{
+    
+    public function searchResult() {
 
-        if (isset($_GET["submit"])) {
-            $search = $_GET['search'];
-            $search = trim($search);
-            $search = strip_tags($search);
+        if (!$_GET) {
+            echo self::getRender('homepage.html.twig', []);
+        } else {
+            $searchRaw =$_GET['search'];
+            $searchTrimed = trim($searchRaw);
+            $searchTerm =strip_tags($searchTrimed);
 
             $model = new SearchModel();
-            $results = $model->getSearchResult($search);
+            $recipes = $model->getSearchResult($searchTerm);
 
-            $searchlink = $router->generate('search');
-            echo self::getRender('searchresult.html.twig', ['results' => $results, 'searchlink' => $searchlink]);
-        } else {
-            echo 'Nothing to see here, why not write it yourself ?';
+            if($recipes) {
+
+                echo self::getRender('searchresult.html.twig', ['recipes' => $recipes]);
+            } else {
+                $message = 'Oops, nothing to see here.';
+             echo self::getRender('searchresult.html.twig', ['message' => $message]);
+            }
+
+            
         }
     }
 }

@@ -13,6 +13,7 @@ $router->map('GET', '/', 'HomeController#home', 'home');
 $router->map('GET', '/recipe/', '', 'baseRecipe');
 $router->map('GET', '/recipe/[i:id]', 'RecipeController#getOne', '');
 $router->map('GET','/category/','','baseCats');
+$router->map('GET', '/category/[i:id]', 'CategoryController#getOne', '');
 
 // CATEGORIES
 $router->map('GET','/search/','RecipeController#getAll','recipeindex');
@@ -31,7 +32,7 @@ $router->map('GET', '/account', 'UserController#account', 'account');
 $router->map('GET|POST', '/addrecipe', 'RecipeController#createRecipe', 'recipeAdd');
 
 // SEARCH
-$router->map('GET', '/search', 'SearchController#searchrecipe', 'search');
+$router->map('GET', '/search', 'SearchController#searchResult', 'search');
 
 
 $match = $router->match();
