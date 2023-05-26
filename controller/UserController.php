@@ -39,12 +39,14 @@ class UserController extends Controller {
                     $_SESSION['username'] = $user->getUsername();
                     $_SESSION['connect'] = true;
 
-                    echo self::getRender('account.html.twig', []);
+                global $router;
+                header('Location: ' . $router->generate('account'));
+                exit();
                 } else {
                     echo 'ECLATAX';
                 }
             } else {
-                $message = "Email / mot de passe incorrect !";
+                $message = "Email / password incorrect !";
                 echo self::getRender('login.html.twig', ['message' => $message]);
             }
         }
@@ -57,21 +59,5 @@ class UserController extends Controller {
         global $router;
         header('Location: ' . $router->generate('home'));
         exit();
-    }
-
-    public function account(){
-        if ($_SESSION['connect']) {
-            $userId = $_SESSION['uid'];
-
-            $model = new UserModel();
-            $userRecipes = $model->getUserRecipes($userId);
-
-            echo self::getRender('account.html.twig', ['userRecipes' => $userRecipes]);
-        } else {
-            // Redirect to login page if not logged in
-            global $router;
-            header('Location: ' . $router->generate('login'));
-            exit();
-        }
     }
 }

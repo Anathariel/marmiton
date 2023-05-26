@@ -51,6 +51,10 @@
 			<ul>
 				{% for recipe in recipes %}
 					<div id="recipe-card">
+					{% if recipe.thumbnail is defined and recipe.thumbnail is not empty %}
+    					<img src="{{ asset('/media/images/' ~ recipe.thumbnail) }}" alt="{{ recipe.thumbnail }}">
+					{% endif %}
+
 						<li>
 							<a href="{{ path('baseRecipe') }}{{ recipe.id }}">{{ recipe.title }}</a>
 						</li>

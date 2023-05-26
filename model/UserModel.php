@@ -35,23 +35,4 @@ class UserModel extends Model {
 
         return $req->rowCount() === 1 ? new User($req->fetch(PDO::FETCH_ASSOC)) : false;
     }
-
-    public function getUserRecipes(int $userId){
-        $recipes = [];
-
-        $req = $this->getDb()->prepare('SELECT `recipe`.`id`, `recipe`.`author`, `recipe`.`title`, `recipe`.`duration`, `recipe`.`thumbnail`, `recipe`.`content`, `recipe`.`created_at`, `user`.`uid`, `user`.`username`, `user`.`email`, `user`.`favoris`, `user`.`joined_date`, `user`.`password`
-            FROM `recipe`
-            INNER JOIN `user`
-            ON `recipe`.`author` = `user`.`uid`
-            WHERE `recipe`.`author` = :id');
-        $req->bindParam(':id', $userId, PDO::PARAM_INT);
-        $req->execute();
-
-        while ($recipeData = $req->fetch(PDO::FETCH_ASSOC)) {
-            $recipes[] = new Recipe($recipeData);
-        }
-
-        $req->closeCursor();
-        return $recipes;
-    }
 }

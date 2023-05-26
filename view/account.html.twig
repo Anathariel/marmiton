@@ -27,9 +27,16 @@
 					<p>{{ recipe.content }}</p>
 				</li>
 				<div>
-					<button>Edit</button>
-					<button>Delete</button>
+					<form action="{{ router.generate('editRecipe', {'id': recipe.id}) }}" method="GET">
+    					<input type="submit" value="Edit">
+					</form>
+
+					<form action="{{ router.generate('deleteRecipe', {'id': recipe.id}) }}" method="POST">
+    					<input type="hidden" name="_method" value="DELETE">
+    					<input type="submit" value="Delete">
+					</form>
 				</div>
+
 			</div>
 		{% endfor %}
 	</ul>
