@@ -37,7 +37,7 @@ $router->map('POST|DELETE', '/recipe/delete/[i:id]', 'RecipeController#delete', 
 
 
 // SEARCH
-$router->map('GET', '/search', 'SearchController#searchResult', 'search');
+$router->map('GET|POST', '/search', 'SearchController#searchResult', 'search');
 
 $match = $router->match();
 // var_dump($match);

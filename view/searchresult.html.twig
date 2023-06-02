@@ -7,14 +7,19 @@
 
 
 {% block content %}
-
+		<form action="{{ path('search') }}" method="GET" id="search-form">
+			<input type="text" name="search" placeholder="Search Recipes . . ." id="input-search">
+			<button type="submit">X</button>
+		</form>
 <section>
 <h2>Search Results</h2>
+
+<div id="response"></div>
 			<ul>
 				{% for recipe in recipes %}
 					<div id="recipe-card">
 						<li>
-							<a href="{{ oneRecipe }}{{ recipe.id }}">{{ recipe.title }}</a>
+							<a href="{{ path('baseRecipe') }}{{ recipe.id }}">{{ recipe.title }}</a>
 						</li>
 						<li>
 							<p>{{ recipe.duration }}</p>
